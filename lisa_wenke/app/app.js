@@ -2,6 +2,8 @@
 
 
 (function(){
+  // var nodemailer = require('nodemailer');
+  // var transporter = nodemailer.createTransport();
   var contact = { name: ' Lisa Wenke', phone: '206-383-1273', email: 'lwenke@gmail.com'};
 
   var gitRoute = 'https://api.github.com/users/lwenke01';
@@ -12,11 +14,19 @@ app.directive('customContact', function(){
   return {
     restrict: 'E',
     templateUrl: './templates/portfolio-contact.html',
-    controller:function($http){
+    controller:function(){
       this.userInfo = contact;
-      // this.formData = {};
-      // this.processForm = function
-      // $http.get()
+      // this.sendMail = function(req,res){
+      //   this.data = req.body;
+      //   transporter.sendMail({
+      //     from: data.contactEmail,
+      //     to:'lwenke@gmail.com',
+      //     subject:'New Message from ' + data.contactName,
+      //     text: data.contactMsg
+      //   });
+      //   res.json(data);
+      // };
+
 
   },
   controllerAs: 'contactCtrl'

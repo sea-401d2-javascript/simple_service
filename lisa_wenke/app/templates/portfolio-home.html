@@ -1,4 +1,7 @@
-<section class="home" ng-show="tabCtrl.isSet(1)">
-  <h1>About Me</h1>
-<img src="{{homeCtrl.user.avatar_url}}" ng-cloak/>
+<section class="home" ng-show="tabCtrl.isSet(1)" ng-cloak>
+  <div class="about-wrapper">
+    <h1>About Me</h1>
+    <img class="user-image" src="{{homeCtrl.user.avatar_url}}" ng-cloak/>
+
+  </div>
 </section>
