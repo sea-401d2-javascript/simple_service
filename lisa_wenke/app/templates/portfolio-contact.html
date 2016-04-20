@@ -1,0 +1,43 @@
+<section class="contact-list" ng-show="tabCtrl.isSet(4)">
+<div class="contact-bar">
+  <span>Phone: {{contactCtrl.userInfo.phone}}</span>
+    <span>Email: {{contactCtrl.userInfo.email}}</span>
+  </div>
+
+  <div class='container'>
+    <div class='sent' ng-class="{ 'hidden': !submit }">
+      <h1>
+        Message sent!
+        <small>&hellip;okay, not really.</small>
+      </h1>
+    </div>
+    <form name='contactForm' ng-class="{ 'hidden': submit }">
+      <fieldset>
+        <legend>Contact Me!</legend>
+        <label for='email' ng-class="{'required':contactForm.email.$error.required,'invalid':contactForm.email.$error.email,'ok':contactForm.email.$valid}">
+          <span class='no-placeholder'>
+            Email
+          </span>
+          <input id='email' name='email' ng-model='email' placeholder='Email' required type='email'>
+        </label>
+        <label for='subject' ng-class="{'required':contactForm.subject.$error.required,'ok':contactForm.subject.$valid}">
+          <span class='no-placeholder'>
+            Subject
+          </span>
+          <input id='subject' name='subject' ng-model='subject' placeholder='Subject' required type='text'>
+        </label>
+        <label for='message' ng-class="{'required':contactForm.message.$error.required,'ok':contactForm.message.$valid}">
+          <span class='no-placeholder'>
+            Message
+          </span>
+          <textarea name='message' ng-model='message' placeholder='Message' required></textarea>
+        </label>
+      </fieldset>
+      <div class='form-controls'>
+        <button class='btn btn-send' ng-click='submit = ! submit' ng-disabled='contactForm.$invalid' type='submit'>
+          Send
+        </button>
+      </div>
+    </form>
+  </div>
+  </section>
