@@ -45,6 +45,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	const angular = __webpack_require__(1);
+	const app = angular.module('app', []);
+
+	__webpack_require__(3)(app);
+	__webpack_require__(4)(app);
+	__webpack_require__(5)(app);
 
 
 /***/ },
@@ -30927,6 +30932,57 @@
 	})(window);
 
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.factory('AqueductService', function() {
+	    var service = {};
+	    var water = 100;
+
+	    service.giveWater = function(n) {
+	      water -= n;
+	      return n;
+	    }
+
+	    return service;
+	  });
+
+	}
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+
+	  app.controller('ReservoirController', ['AqueductService', function(AqueductService) {
+	    const ctrl = this;
+
+	    ctrl.be = function() {
+	      return "thirsty";
+	    }
+
+	  }]);
+
+	};
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+
+	  app.controller('NatureController', ['AqueductService', function(AqueductService) {
+
+	  }])
+
+	};
+
 
 /***/ }
 /******/ ]);
