@@ -7,7 +7,15 @@
   {{"plz respond"}}
 
   <section data-ng-controller="ReservoirController as reservoirCtrl">
+    <h1>{{reservoirCtrl.name.toUpperCase()}}</h1>
+    <h2>{{reservoirCtrl.myWater}}</h2>
     {{reservoirCtrl.be()}}
+    <button data-ng-click="reservoirCtrl.takeWater()">water lawn</button>
+  </section>
+
+  <section data-ng-controller="NatureController as natureCtrl">
+    <h1>{{natureCtrl.name.toUpperCase()}}</h1>
+    {{natureCtrl.be()}}
   </section>
 
   <script src="./bundle.js"></script>

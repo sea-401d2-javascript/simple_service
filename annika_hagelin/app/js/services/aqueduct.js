@@ -4,6 +4,7 @@ module.exports = function(app) {
     var water = 100;
 
     service.giveWater = function(n) {
+      if (n > water) return 0;
       water -= n;
       return n;
     }
