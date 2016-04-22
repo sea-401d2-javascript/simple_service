@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "angular-mocks": "^1.5.5",
     "gulp": "^3.9.1",
+    "karma": "^0.13.22",
     "webpack-stream": "^3.1.0"
   },
   "dependencies": {

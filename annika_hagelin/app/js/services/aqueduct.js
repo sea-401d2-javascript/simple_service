@@ -9,6 +9,10 @@ module.exports = function(app) {
       return n;
     }
 
+    service.assess = function() {
+      return water;
+    }
+
     return service;
   });
 

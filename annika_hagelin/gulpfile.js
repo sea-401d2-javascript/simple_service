@@ -3,7 +3,8 @@ const webpack = require('webpack-stream');
 
 const sources = {
   html: __dirname + '/app/index.html',
-  js: __dirname + '/app/index.js'
+  js: __dirname + '/app/index.js',
+  test: __dirname + '/test/karma/*.js'
 }
 
 gulp.task('bundle:dev', () => {
@@ -15,6 +16,12 @@ gulp.task('bundle:dev', () => {
 gulp.task('copy', () => {
   return gulp.src(sources.html)
     .pipe(gulp.dest('./build'));
+});
+
+gulp.task('bundle:test', () => {
+  return gulp.src(sources.test)
+    .pipe(webpack({output: {filename: 'test_bundle.js'}}))
+    .pipe(gulp.dest('./test'));
 });
 
 gulp.task('default', ['bundle:dev', 'copy']);
