@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="TrackerApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Very Cool Bid Checker</h1>
+
+    <main ng-controller="CustomerController as customerctrl">
+      <p>CostClub's bid on a new product is ${{customerctrl.count}}.</p>
+      <button ng-click="customerctrl.increment()">Add 1</button>
+    </main>
+
+    <main ng-controller="CustomerController as customerctrl">
+      <p>SamsCo bid on a new product is ${{customerctrl.count}}.</p>
+      <button ng-click="customerctrl.increment()">Add 1</button>
+    </main>
+
+    <main ng-controller="StoreController as storectrl">
+      <p>The highest bid was ${{storectrl.count}}!</p>
+      <button ng-click="storectrl.increment()">High Bid</button>
+    </main>
+
+    <script src="./bundle.js"></script>
+  </body>
+</html>

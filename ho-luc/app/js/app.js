@@ -1,6 +1,7 @@
 'use strict'
 const angular = require('angular');
-var app = angular.module('TrackerApp', [])
+
+const app = angular.module('TrackerApp', [])
 require('./services/track-service')(app)
 
 app.controller('CustomerController', ['TrackService', function(TrackService) {
