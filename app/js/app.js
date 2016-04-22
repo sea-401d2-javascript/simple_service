@@ -9,8 +9,6 @@ app.controller('storyControlelr',[ 'createStoryService' ,function(createStorySer
     this.story1 = createStoryService.baseStory().story1;
     createStoryService.counter();
     this.count = createStoryService.count();
-    console.log(this.story1);
-    console.log(this.count);
   };
 }]);
 
@@ -21,7 +19,5 @@ app.controller('characterController', ['createStoryService' , function(createSto
     this.char1 = createStoryService.characters().char1;
     createStoryService.counter();
     this.count = createStoryService.count();
-    console.log(this.char1);
-    console.log(this.count);
   };
 }]);

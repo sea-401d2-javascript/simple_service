@@ -5,14 +5,14 @@
     <title>Angularjs Services</title>
   </head>
   <body >
-    <section data-ng-cloak data-ng-controller="storyControlelr as story">
-      <p data-ng-model="story.story1">{{ story.story1 }}</p>
-      <p data-ng-model="story.count">{{ story.count }}</p>
+    <section data-ng-controller="storyControlelr as story">
+      <p data-ng-model="story.story1" data-ng-bind="story.story1"></p>
+      <p data-ng-model="story.count" data-ng-bind="story.count"></p>
       <button data-ng-click="story.showStory()" type="button" name="button" >click me!</button>
     </section>
     <section data-ng-cloak data-ng-controller="characterController as character">
-      <p data-ng-model="character.char1">{{ character.char1 }}</p>
-      <p data-ng-model="character.count">{{ character.count }}</p>
+      <p data-ng-model="character.char1" data-ng-bind="character.char1"></p>
+      <p data-ng-model="character.count" data-ng-bind="character.count"></p>
       <button data-ng-click="character.showCharacters()" type="button" name="button">click me too!</button>
     </section>
 
