@@ -30965,13 +30965,16 @@
 
 	    ctrl.name = 'reservoir';
 	    ctrl.myWater = 0;
+	    ctrl.status = 'at capicity';
 
 	    ctrl.be = function() {
 	      return "thirsty";
 	    }
 
 	    ctrl.takeWater = function() {
-	      this.myWater += AqueductService.giveWater(10);
+	      var returns = AqueductService.giveWater(10);
+	      if (!returns) this.status = "closed to recreation";
+	      else this.myWater += returns;
 	    }
 
 	  }]);
@@ -30989,15 +30992,20 @@
 	    const ctrl = this;
 
 	    ctrl.name = 'nature';
-	    ctrl.myWater = 0;
+	    ctrl.lifesource = 0;
+	    ctrl.status = 'ok';
 
 	    ctrl.be = function() {
 	      return 'need water';
 	    }
 
 	    ctrl.useWater = function() {
-	      this.myWater += AqueductService.giveWater(10);
+	      var returns = AqueductService.giveWater(10);
+	      if (!returns) this.status = "extreme drought";
+	      else this.lifesource += returns;
 	    }
+
+
 
 
 	  }])

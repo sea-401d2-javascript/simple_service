@@ -4,15 +4,20 @@ module.exports = function(app) {
     const ctrl = this;
 
     ctrl.name = 'nature';
-    ctrl.myWater = 0;
+    ctrl.lifesource = 0;
+    ctrl.status = 'ok';
 
     ctrl.be = function() {
       return 'need water';
     }
 
     ctrl.useWater = function() {
-      this.myWater += AqueductService.giveWater(10);
+      var returns = AqueductService.giveWater(10);
+      if (!returns) this.status = "extreme drought";
+      else this.lifesource += returns;
     }
+
+
 
 
   }])

@@ -5,13 +5,16 @@ module.exports = function(app) {
 
     ctrl.name = 'reservoir';
     ctrl.myWater = 0;
+    ctrl.status = 'at capicity';
 
     ctrl.be = function() {
       return "thirsty";
     }
 
     ctrl.takeWater = function() {
-      this.myWater += AqueductService.giveWater(10);
+      var returns = AqueductService.giveWater(10);
+      if (!returns) this.status = "closed to recreation";
+      else this.myWater += returns;
     }
 
   }]);
