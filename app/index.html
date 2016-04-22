@@ -9,22 +9,21 @@
     }
   </style>
 </head>
-<!-- <body data-ng-app="PeopleApp"> -->
 <body ng-app="MyApp">
   <main data-ng-cloak>
-
+    <h1>Users List</h1>
     <div ng-controller="MyCtrl">
       <ul ng-repeat="user in users">
         <li>{{user}}</li>
       </ul>
       <div class="nested" ng-controller="AnotherCtrl">
         First user: {{firstUser}}
+        <br>
+        Last user: {{lastUser}}
       </div>
     </div>
-
   </main>
-  <script src="./node_modules/angular/angular.js"></script>
-
-  <script src="./index.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> -->
+  <script src="./bundle.js"></script>
 </body>
 </html>
