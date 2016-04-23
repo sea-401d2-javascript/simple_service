@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+  <head>
+    <link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+    <title>Services Example</title>
+    <style>
+      .ng-cloak {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body data-ng-cloak class="ng-cloak">
+    <main>
+      <section data-ng-controller="FirstController as first" data-ng-init="first.getData()">
+        <p>Data from first controller: {{first.data[0].name}}</p>
+      </section> 
+      <section data-ng-controller="SecondController as second" data-ng-init="second.getData()">
+        <p>Data from second controller: {{second.data[1].name}}</p>
+      </section>
+    </main>
+  <script src="bundle.js"></script>
+  </body>
+</html>
