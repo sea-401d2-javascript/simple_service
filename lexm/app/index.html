@@ -31,6 +31,13 @@
       <p>Breed: {{doggie.breed}}</p>
       <p>Color: {{doggie.color}}</p>
     </section>
+    <form>
+      <p>
+        Add (or change) your favorite doggie:
+      </p>
+      <input type="text" ng-model="doggieCtrl.newDoggie">
+      <input type="submit" ng-click="doggieCtrl.changeFaveDoggie(doggieCtrl.newDoggie)">
+    </form>
     <div>
       <p>My favorite kitty is: {{doggieCtrl.showFaveKitty()}}</p>
       <p>My favorite doggie is: {{doggieCtrl.showFaveDoggie()}}</p>

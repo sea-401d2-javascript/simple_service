@@ -1,11 +1,11 @@
 module.exports = (app) => {
   app.factory('FavePets', function() {
     var service = {};
-    var faveKitty = 'Meowser';
-    var faveDoggie = 'Fido';
+    var faveKitty = '';
+    var faveDoggie = '';
 
     service.showFaveKitty = function() {
-      return 'Favorite Kitty is: ' + faveKitty;
+      return faveKitty;
     }
 
     service.changeKitty = function(newKitty) {
@@ -13,7 +13,7 @@ module.exports = (app) => {
     }
 
     service.showFaveDoggie = function() {
-      return 'Favorite Doggie is: ' + faveDoggie;
+      return faveDoggie;
     }
 
     service.changeDoggie = function(newDoggie) {
