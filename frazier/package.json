@@ -1,0 +1,41 @@
+{
+  "name": "frazier",
+  "version": "0.1.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:selenium": "webdriver-manager start",
+    "start:server": "nodemon server.js",
+    "test:unit":"gulp test:rebuild; karma start",
+    "test:endToEnd":"gulp test:rebuild; protractor protractor-config.js;"
+  },
+  "author": "Frazier Mork <fraziermork@gmail.com> (https://frazier-fibonacci.herokuapp.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "angular-mocks": "^1.5.5",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-karma": "0.0.5",
+    "gulp-mocha": "^2.2.0",
+    "gulp-protractor": "^2.3.0",
+    "gulp-webpack": "^1.5.0",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
+    "nodemon": "^1.9.1",
+    "protractor": "^3.2.2",
+    "webpack": "^1.13.0",
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "express": "^4.13.4"
+  }
+}
