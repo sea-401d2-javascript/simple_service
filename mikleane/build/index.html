@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Services</title>
+  </head>
+  <body>
+    <div ng-controller="CalculatorController">
+      Enter a number:
+      <input type="number" ng-model="number" />
+      <button ng-click="doSquare()">X<sup>2</sup></button>
+      <button ng-click="doCube()">X<sup>3</sup></button>
+
+      <div>Answer: {{answer}}</div>
+    </div>
+    <div ng-controller="AddController">
+      Enter two numbers:
+      <input type="number" ng-model="a"/>
+      <input type="number" ng-model="b" />
+      <button ng-click="add()">ADD</button>
+      <button ng-click="subtract()">SUBTRACT</button>
+
+      <div>Answer: {{answer}}</div>
+
+    </div>
+    <script src="./../node_modules/angular/angular.js">
+
+    </script>
+    <script src="./index.js"></script>
+  </body>
+</html>
