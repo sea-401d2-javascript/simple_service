@@ -1,7 +1,5 @@
-// two controllers
-// one service
 'use strict';
-
+(function() {
 let app = angular.module('myApp', []);
 
 app.factory('CustomService', () => {
@@ -24,7 +22,7 @@ app.factory('CustomService', () => {
   return function(name) {
     return new ServiceConstructor(name);
   }
-})
+});
 
 app.controller('mainController', function(CustomService) {
   let vm = this;
@@ -43,3 +41,5 @@ app.controller('subController', function(CustomService) {
   vm.add = service.add;
 
 });
+
+})();
