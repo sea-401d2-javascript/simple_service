@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
+    <title>Simple Service</title>
+  </head>
+  <body>
+    <main data-ng-controller="mainController as mainCtrl">
+      Controlled from: {{mainCtrl.name}}
+      <input type="number" data-ng-model="addMain">
+      <button data-ng-click="mainCtrl.add(addMain)">Add</button>
+      <section data-ng-controller="subController as subCtrl">
+        Controlled from: {{subCtrl.name}}
+        <input type="number" data-ng-model="addSub">
+        <button data-ng-click="subCtrl.add(addSub)">Add</button>
+      </section>
+      <ul>
+        <li data-ng-repeat="num in mainCtrl.addHistory">{{num}}</li>
+      </ul>
+    </main>
+
+    <script src="./node_modules/angular/angular.js" charset="utf-8"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script> -->
+    <script src="./app.js" charset="utf-8"></script>
+  </body>
+</html>

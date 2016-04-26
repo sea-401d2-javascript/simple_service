@@ -1,0 +1,23 @@
+{
+  "name": "serviceHW",
+  "version": "1.0.0",
+  "description": "Make a simple Angular app. The app should have two controllers and make use of a service to share state between them. Write a test suite for your service.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/setheid/simple_service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/setheid/simple_service/issues"
+  },
+  "homepage": "https://github.com/setheid/simple_service#readme",
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
