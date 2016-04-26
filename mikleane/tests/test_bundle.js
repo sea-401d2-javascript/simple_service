@@ -74,6 +74,32 @@
 	    expect(MathService.add).toHaveBeenCalled();
 	    expect(fetched).toEqual(2);
 	  });
+
+	  it('should return a value', function(){
+	    spyOn(MathService, 'subtract').and.returnValue(2);
+	    var fetched = MathService.subtract();
+	    expect(MathService.subtract).toHaveBeenCalled();
+	    expect(fetched).toEqual(2);
+	  });
+
+	  it('should return a value', function(){
+	    spyOn(MathService, 'multiply').and.returnValue(2);
+	    var fetched = MathService.multiply();
+	    expect(MathService.multiply).toHaveBeenCalled();
+	    expect(fetched).toEqual(2);
+	  });
+
+	  it('should return a value', function(){
+	    spyOn(MathService, 'divide').and.returnValue(2);
+	    var fetched = MathService.divide();
+	    expect(MathService.divide).toHaveBeenCalled();
+	    expect(fetched).toEqual(2);
+	  });
+
+
+
+
+
 	});
 
 
