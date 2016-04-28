@@ -1,0 +1,29 @@
+{
+  "name": "nienowt",
+  "version": "1.0.0",
+  "description": "Make a simple Angular app. The app should have two controllers and make use of a service to share state between them. Write a test suite for your service.",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+  },
+  "devDependencies": {
+    "gulp-karma": "^0.0.5",
+    "karma-chrome-launcher": "^0.2.3",
+    "gulp": "^3.9.1",
+    "angular-mocks": "^1.5.5",
+    "jasmine": "^2.4.1",
+    "karma-jasmine": "^0.3.8",
+    "webpack-stream": "^3.1.0",
+    "karma": "^0.13.22",
+    "jasmine-core": "^2.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

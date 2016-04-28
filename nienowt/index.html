@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body ng-controller="LogController as logCtrl">
+    <section ng-show="!logCtrl.user()">
+      <input type="text" ng-model="user" placeholder="ENTER YOUR NAME">
+      <button ng-click="logCtrl.login(user); user='';">SUBMIT</button>
+    </section>
+    <section ng-show="logCtrl.user()"ng-init="dataCtrl.getData()"ng-controller="DataController as dataCtrl">
+      <a href="" ng-click="history = !history">Show Saved</a>
+      <a href="" ng-click="logCtrl.logout(); history = !history">Log out</a>
+      <section ng-show="history">
+        User: {{logCtrl.user()}}
+        <p>History:</p>
+        <p ng-repeat="cam in dataCtrl.getHist() track by $index">
+        {{cam.cameralabel}}
+        </p>
+      </section>
+      <div ng-repeat="camera in dataCtrl.cameras | limitTo: 20">
+        <h1>{{camera.cameralabel}}</h1>
+        <img ng-src="{{camera.imageurl}}"/>
+        <p><a href='' ng-click="dataCtrl.add(camera)">SAVE</a></p>
+      </div>
+    </section>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./app/app.js"></script>
+  </body>
+</html>
