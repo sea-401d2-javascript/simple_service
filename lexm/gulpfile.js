@@ -83,6 +83,12 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('./public/'));
 });
 
+gulp.task('bundle:test', function() {
+  return gulp.src('./test/unit/spec.js')
+    .pipe(webpack({output: {filename: 'test_bundle.js'}}))
+    .pipe(gulp.dest('./test'));
+});
+
 gulp.task('watch:css', function() {
   gulp.watch(paths.css, ['build:css']);
 });
