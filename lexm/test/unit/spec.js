@@ -32,16 +32,16 @@ describe('testing something', function() {
   });
 });
 
-describe('unit testing directive', function() {
-  var $compile;
-  var $rootScope;
-
-  beforeEach(angular.mock.module('directives'));
-  beforeEach(angular.mock.inject(function(_$compile, _$rootScope) {
-    $compile = _$compile;
-    $rootScope = _$rootScope;
-  }))
-})
+// describe('unit testing directive', function() {
+//   var $compile;
+//   var $rootScope;
+//
+//   beforeEach(angular.mock.module('directives'));
+//   beforeEach(angular.mock.inject(function(_$compile, _$rootScope) {
+//     $compile = _$compile;
+//     $rootScope = _$rootScope;
+//   }))
+// })
 
 describe('unit testing services', function() {
   var FavePets,
@@ -54,13 +54,6 @@ describe('unit testing services', function() {
   beforeEach(angular.mock.inject(function(_FavePets_) {
     FavePets = _FavePets_;
   }))
-  // beforeEach(angular.mock.inject(function(_showFaveKitty_, _changeKitty_,
-  //   _showFaveDoggie_, _changeDoggie_))) {
-  //     showFaveKitty = _showFaveKitty_;
-  //     changeKitty = _changeKitty_;
-  //     showFaveDoggie = _showFaveDoggie_;
-  //     changeDoggie = _changeDoggie_;
-  //   };
 
   it('should be able to set a fave kitty', function(done) {
     expect(typeof FavePets.changeKitty).toBe('function');
