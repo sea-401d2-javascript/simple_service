@@ -26,21 +26,6 @@ describe('test of angular service', function() {
     browser.get('http://localhost:8080');
   });
 
-  it('should be able to enter a fave kitty', function(done) {
-    newKitty.sendKeys('Mittens');
-    newKittyButton.click();
-    expect(kFaveKitty.getText()).toEqual('My favorite kitty is: Mittens');
-    expect(dFaveKitty.getText()).toEqual('My favorite kitty is: Mittens');
-    done();
-  });
-
-  it('should be able to enter a fave doggie', function(done) {
-    newDoggie.sendKeys('Murphy');
-    newDoggieButton.click();
-    expect(kFaveDoggie.getText()).toEqual('My favorite doggie is: Murphy');
-    expect(dFaveDoggie.getText()).toEqual('My favorite doggie is: Murphy');
-    done();
-  });
 
   it('should get a list of kitties', function() {
     kitty0Name.getText()
@@ -55,9 +40,61 @@ describe('test of angular service', function() {
       .then(function(text) {
         expect(text).toEqual('Color: grey');
       });
+    kitty1Name.getText()
+      .then(function(text) {
+        expect(text).toEqual('Name: Mittens');
+      });
+    kitty1Breed.getText()
+      .then(function(text) {
+        expect(text).toEqual('Breed: Domestic Shorthair');
+      });
+    kitty1Color.getText()
+      .then(function(text) {
+        expect(text).toEqual('Color: orange');
+      });
   })
-  it('should get a list of doggies', function() {
 
+  it('should be able to enter a fave kitty', function(done) {
+    newKitty.sendKeys('Mittens');
+    newKittyButton.click();
+    expect(kFaveKitty.getText()).toEqual('My favorite kitty is: Mittens');
+    expect(dFaveKitty.getText()).toEqual('My favorite kitty is: Mittens');
+    done();
+  });
+
+  it('should get a list of doggies', function() {
+    doggie0Name.getText()
+      .then(function(text) {
+        expect(text).toEqual('Name: Murphy');
+      });
+    doggie0Breed.getText()
+      .then(function(text) {
+        expect(text).toEqual('Breed: Pichon');
+      });
+    doggie0Color.getText()
+      .then(function(text) {
+        expect(text).toEqual('Color: white');
+      });
+    doggie1Name.getText()
+      .then(function(text) {
+        expect(text).toEqual('Name: Harry');
+      });
+    doggie1Breed.getText()
+      .then(function(text) {
+        expect(text).toEqual('Breed: Mutt');
+      });
+    doggie1Color.getText()
+      .then(function(text) {
+        expect(text).toEqual('Color: dirty');
+      });
   })
+
+  it('should be able to enter a fave doggie', function(done) {
+    newDoggie.sendKeys('Murphy');
+    newDoggieButton.click();
+    expect(kFaveDoggie.getText()).toEqual('My favorite doggie is: Murphy');
+    expect(dFaveDoggie.getText()).toEqual('My favorite doggie is: Murphy');
+    done();
+  });
 
 })
