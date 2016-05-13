@@ -49,7 +49,8 @@ var eslintRules = {
 var paths = {
   css:  ['app/*.css'],
   html: ['app/*.html'],
-  js:   ['app/js/*.js', 'test/*.js']
+  js:   ['app/js/*.js', 'test/*.js'],
+  test: ['test/unit/spec.js']
 };
 
 gulp.task('lint', function(){
@@ -83,6 +84,12 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('./public/'));
 });
 
+gulp.task('bundle:test', function() {
+  return gulp.src('./test/unit/spec.js')
+    .pipe(webpack({output: {filename: 'test_bundle.js'}}))
+    .pipe(gulp.dest('./test'));
+});
+
 gulp.task('watch:css', function() {
   gulp.watch(paths.css, ['build:css']);
 });
@@ -94,6 +101,10 @@ gulp.task('watch:html', function() {
 gulp.task('watch:js', function() {
   gulp.watch(paths.js, ['build:js']);
 });
+
+gulp.task('watch:test', function() {
+  gulp.watch(paths.test, ['bundle:test']);
+})
 
 gulp.task('clean', function() {
   return gulp.src('public', {read: false})
