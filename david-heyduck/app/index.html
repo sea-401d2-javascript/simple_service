@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dogs and Cats</title>
+</head>
+<body>
+  <section data-ng-controller="CatController as catCtrl">
+    <h1>cat List</h1>
+    <section data-ng-repeat="cat in catCtrl.kitties">
+      <p>Name: {{cat.name}}</p>
+      <p>Breed: {{cat.breed}}</p>
+      <p>Color: {{cat.color}}</p>
+    </section>
+    <form>
+      <p>
+        Add (or change) your favorite cat:
+      </p>
+      <input type="text" ng-model="catCtrl.newcat">
+      <input type="submit" ng-click="catCtrl.changeFavecat(catCtrl.newcat)">
+    </form>
+    <div>
+      <p>My favorite cat is: {{catCtrl.showFavecat()}}</p>
+      <p>My favorite dog is: {{catCtrl.showFavedog()}}</p>
+    </div>
+  </section>
+  <section data-ng-controller="dogController as dogCtrl">
+    <h1>dog List</h1>
+    <section data-ng-repeat="dog in dogCtrl.dogs">
+      <p>Name: {{dog.name}}</p>
+      <p>Breed: {{dog.breed}}</p>
+      <p>Color: {{dog.color}}</p>
+    </section>
+    <form>
+      <p>
+        Add (or change) your favorite dog:
+      </p>
+      <input type="text" ng-model="dogCtrl.newdog">
+      <input type="submit" ng-click="dogCtrl.changeFavedog(dogCtrl.newdog)">
+    </form>
+    <div>
+      <p>My favorite cat is: {{dogCtrl.showFavecat()}}</p>
+      <p>My favorite dog is: {{dogCtrl.showFavedog()}}</p>
+    </div>
+  </section>
+  <script type="text/javascript" src="./bundle.js"></script>
+</body>
+</html>
