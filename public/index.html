@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="scoreApp">
+<head>
+<script type="text/javascript" src="./js/angular.min.js"></script>
+<script type="text/javascript" src="./bundle.js"></script>
+  <title>Simple Service App</title>
+</head>
+<body>
+  <main>
+    <section ng-controller="HighScoreController as hsctrl">
+      <h2>High Score: {{hsctrl.highScore}}
+      </h2>
+
+    <section ng-controller="Game1Controller as game1ctrl">
+      <h2>Video Game 1</h2>
+      Current game high score: {{game1ctrl.score}}
+      <button ng-click="game1ctrl.increment();hsctrl.setHighScore()">+1</button>(Increments on current overall high score)
+    </section>
+    <section ng-controller="Game2Controller as game2ctrl">
+      <h2>Video Game 2</h2>
+      Current game high score: {{game2ctrl.score}}
+      <button ng-click="game2ctrl.increment();hsctrl.setHighScore()">+1</button>(Increments on current overall high score)
+      </section><!-- 
+      <button ng-click="hsctrl.setHighScore()">Show High Score</button> -->
+      </section>
+  </main>
+
+</body>
+</html>
