@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body data-ng-app="WaterApp">
+  {{"100 gallons of life"}}
+
+  <section data-ng-controller="ReservoirController as reservoirCtrl">
+    <h1>{{reservoirCtrl.name.toUpperCase()}} - {{reservoirCtrl.status}}</h1>
+    <h2>{{reservoirCtrl.myWater}}</h2>
+    {{reservoirCtrl.be()}}
+    <button data-ng-click="reservoirCtrl.takeWater()">water lawn</button>
+  </section>
+
+  <section data-ng-controller="NatureController as natureCtrl">
+    <h1>{{natureCtrl.name.toUpperCase()}} - {{natureCtrl.status}}</h1>
+    <h2>{{natureCtrl.lifesource}}</h2>
+
+    {{natureCtrl.be()}}
+    <button data-ng-click="natureCtrl.useWater()">live</button>
+  </section>
+
+  <script src="./bundle.js"></script>
+</body>
+</html>
