@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Hi</title>
+  </head>
+
+  <body>
+
+    <h1 ng-hide="true">Conlan, you have to npm install</h1>
+
+    <section ng-controller="CountController as countctrl">
+      <p> The count is <span>{{ countctrl.count }}</span></p>
+      <button ng-click="countctrl.increment()"> This button increments </button>
+    </section>
+
+    <section ng-controller="AnotherController as anotherctrl">
+      <p>Here is a section using a COMPLETELY different controller!!</p>
+      <p>The count is <span>{{ anotherctrl.count }}</span></p>
+      <button ng-click="anotherctrl.update()">Get the updated value</button>
+    </section>
+
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

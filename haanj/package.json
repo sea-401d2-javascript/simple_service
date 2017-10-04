@@ -1,0 +1,19 @@
+{
+  "name": "haanj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "protractor-conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "angular": "^1.5.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
