@@ -1,0 +1,16 @@
+{
+    "personages": [
+    {
+      "name": "Ningauble of the Seven Eyes",
+      "expression": "Vague, often pointless storytelling",
+      "eyes": 7,
+      "domicile": "Mysterious cavern"
+    },
+    {
+      "name": "Sheelba of the Eyeless Face",
+      "expression": "Taciturn instructions",
+      "eyes": "unknown",
+      "domicile": "Small hut which moves about on spider-like legs"
+    }
+  ]
+}
